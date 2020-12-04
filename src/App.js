@@ -1,12 +1,20 @@
 import React from "react";
 import "./App.css";
-import Game from "./Game";
+import Home from "./Home";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <Game />
-    </div>
+    <Router>
+      <div></div>
+      <Switch>
+        <Route path="/Resources">Resources</Route>
+        <Route path="/About">About</Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

@@ -6,7 +6,11 @@ function Home() {
   return (
     <div>
       <Core />
-      <div className="LoginWindow"></div>
+      <div className="centre">
+        <div className="LoginWindow"></div>
+        <div className="LoginWindow"></div>
+        <div className="LoginWindow"></div>
+      </div>
     </div>
   );
 }

@@ -50,7 +50,13 @@ let Core = () => {
           </div>
         </div>
         <div className="Mobile">
-          <button onClick={humburgerMenu}>MyButton</button>
+          <div className="grow"></div>
+          <button onClick={humburgerMenu} className="hamburgerMenu">
+            <img
+              className="hamburger"
+              src={process.env.PUBLIC_URL + "/Images/meat.svg"}
+            ></img>
+          </button>
         </div>
       </div>
       <div className="Mobile">

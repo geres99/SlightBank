@@ -3,6 +3,16 @@ import "./Home.css";
 import Core from "./Core/Core";
 
 function Home() {
+  let [passwordStatus, setPasswordStatus] = React.useState("eye-open");
+
+  let changeStatus = () => {
+    if (passwordStatus !== "eye-open") {
+      setPasswordStatus("eye-open");
+    } else {
+      setPasswordStatus("eye-closed");
+    }
+  };
+
   return (
     <div>
       <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -19,8 +29,16 @@ function Home() {
             alt=""
           ></img>
           <div className="Title">Slight Bank</div>
+          <div className="LoginText">Username</div>
           <input className="input" />
+          <div className="LoginText">Password</div>
           <input className="input" />
+          <img
+            onClick={changeStatus}
+            className="Eye"
+            src={process.env.PUBLIC_URL + "/Images/" + passwordStatus + ".svg"}
+            alt=""
+          ></img>
           <div className="row">
             <button className="ButtonLog">Log-in</button>
             <div className="SpaceButtons"></div>

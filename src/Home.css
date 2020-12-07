@@ -9,9 +9,8 @@
   border-radius: 15px;
   flex-direction: column;
 }
-.quillLogin {
-  margin-top: 50px;
-  transform: matrix(-0.99, -0.15, -0.15, 0.99, 0, 0);
+.LoginQuill {
+  margin-top: 10%;
 }
 .Title {
   display: flex;
@@ -20,12 +19,12 @@
   font-weight: normal;
   font-size: 40px;
   line-height: 60px;
-  font-weight: 1000;
+  font-weight: 600;
 
   letter-spacing: 0.05em;
 
   justify-content: center;
-  margin-top: 10%;
+  margin-top: -90%;
 
   color: #563619;
 
@@ -53,8 +52,40 @@
 .input {
   width: 80%;
   height: 10%;
-  margin-top: 18%;
+  font-size: 25px;
+  margin-top: 15%;
   margin-left: 9%;
+  padding-left: 10px;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+.ButtonLog {
+  width: 35%;
+  height: 50px;
+
+  background: #cbb294;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  border: none;
+
+  font-family: "Lobster Two";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 43px;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+
+  color: #563619;
+}
+.SpaceButtons {
+  width: 10%;
 }
 
 @media screen and (max-width: 780px) {

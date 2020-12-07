@@ -55,6 +55,7 @@ let Core = () => {
             <img
               className="hamburger"
               src={process.env.PUBLIC_URL + "/Images/meat.svg"}
+              alt=""
             ></img>
           </button>
         </div>

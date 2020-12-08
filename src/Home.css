@@ -29,8 +29,9 @@
 .Eye {
   display: flex;
   height: 5%;
-  margin-top: -10%;
-  margin-left: 70%;
+  width: 30px;
+  margin-top: -40px;
+  margin-left: 83%;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -150,8 +151,9 @@
   .Eye {
     display: flex;
     height: 5%;
-    margin-top: -12%;
-    margin-left: 70%;
+    width: 30px;
+    margin-top: -37px;
+    margin-left: 83%;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

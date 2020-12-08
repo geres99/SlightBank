@@ -62,13 +62,20 @@ function Home() {
           </div>
         </div>
         <div className="space"></div>
-        <img
-          width="600px"
-          height="400px"
-          className="Freedom"
-          src={process.env.PUBLIC_URL + "/Images/freedom.jpg"}
-          alt=""
-        ></img>
+        <div>
+          <img
+            width="600px"
+            height="400px"
+            className="Freedom"
+            src={process.env.PUBLIC_URL + "/Images/freedom.jpg"}
+            alt=""
+          ></img>
+          <div className="GrayScreen">
+            <div className="ImageText">
+              Free yourself from any costs with SlightBank
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

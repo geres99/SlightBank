@@ -4,6 +4,7 @@ import Core from "./Core/Core";
 
 function Home() {
   let [passwordStatus, setPasswordStatus] = React.useState("eye-open");
+  let [passwordValue, setPasswordValue] = React.useState("");
 
   let changeStatus = () => {
     if (passwordStatus !== "eye-open") {
@@ -11,6 +12,16 @@ function Home() {
     } else {
       setPasswordStatus("eye-closed");
     }
+  };
+  let typeChange = () => {
+    if (passwordStatus !== "eye-open") {
+      return "password";
+    } else {
+      return "text";
+    }
+  };
+  let onInputChange = (e) => {
+    setPasswordValue(e.target.value);
   };
 
   return (
@@ -32,7 +43,12 @@ function Home() {
           <div className="LoginText">Username</div>
           <input className="input" />
           <div className="LoginText">Password</div>
-          <input className="input" />
+          <input
+            type={typeChange()}
+            value={passwordValue}
+            onChange={onInputChange}
+            className="input"
+          />
           <img
             onClick={changeStatus}
             className="Eye"

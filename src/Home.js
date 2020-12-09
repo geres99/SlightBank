@@ -5,6 +5,13 @@ import Core from "./Core/Core";
 function Home() {
   let [passwordStatus, setPasswordStatus] = React.useState("eye-open");
   let [passwordValue, setPasswordValue] = React.useState("");
+  let [imageChosen, setImageChosen] = React.useState(0);
+
+  let imageList = [
+    ["freedom", "Free yourself from any costs with SlightBank"],
+    ["explore", "Explore unexplored before system of payments with SlightBank"],
+    ["obstacle", "Defeat any obstacles with new saving system with SlightBank"],
+  ];
 
   let changeStatus = () => {
     if (passwordStatus !== "eye-open") {
@@ -22,6 +29,21 @@ function Home() {
   };
   let onInputChange = (e) => {
     setPasswordValue(e.target.value);
+  };
+
+  let leftClick = () => {
+    if (imageList[imageChosen + 1] === undefined) {
+      setImageChosen(0);
+    } else {
+      setImageChosen(imageChosen + 1);
+    }
+  };
+  let rightClick = () => {
+    if (imageList[imageChosen - 1] === undefined) {
+      setImageChosen(imageList.length - 1);
+    } else {
+      setImageChosen(imageChosen - 1);
+    }
   };
 
   return (
@@ -67,14 +89,17 @@ function Home() {
             width="600px"
             height="400px"
             className="Freedom"
-            src={process.env.PUBLIC_URL + "/Images/explore.jpg"}
+            src={
+              process.env.PUBLIC_URL +
+              "/Images/" +
+              imageList[imageChosen][0] +
+              ".jpg"
+            }
             alt=""
           ></img>
           <div className="GrayScreen">
-            <div className="ImageText">
-              Free yourself from any costs with SlightBank
-            </div>
-            <button className="buttonSlider">
+            <div className="ImageText">{imageList[imageChosen][1]}</div>
+            <button className="buttonSlider" onClick={leftClick}>
               <img
                 className="left"
                 width="32px"
@@ -83,7 +108,7 @@ function Home() {
                 alt=""
               ></img>
             </button>
-            <button className="buttonSlider">
+            <button className="buttonSlider" onClick={rightClick}>
               <img
                 className="right"
                 width="32px"

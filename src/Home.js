@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useEffect, useCallback } from "react";
 import "./Home.css";
 import Core from "./Core/Core";
 
 function Home() {
-  let [passwordStatus, setPasswordStatus] = React.useState("eye-open");
+  let [passwordStatus, setPasswordStatus] = React.useState("eye-closed");
   let [passwordValue, setPasswordValue] = React.useState("");
   let [imageChosen, setImageChosen] = React.useState(0);
-  let [stopInterval, setStopInterval] = React.useState(false);
 
   let imageList = [
-    ["freedom", "Free yourself from any costs with SlightBank"],
-    ["explore", "Explore unexplored before system of payments with SlightBank"],
-    ["obstacle", "Defeat any obstacles with new saving system with SlightBank"],
+    ["freedom", "Free yourself from any costs with SlightBank", 0],
+    [
+      "explore",
+      "Explore unexplored before system of payments with SlightBank",
+      1,
+    ],
+    [
+      "obstacle",
+      "Defeat any obstacles with new saving system with SlightBank",
+      2,
+    ],
   ];
 
   let changeStatus = () => {
@@ -32,26 +39,28 @@ function Home() {
     setPasswordValue(e.target.value);
   };
 
-  let leftClick = () => {
+  let leftClick = useCallback(() => {
     if (imageList[imageChosen + 1] === undefined) {
       setImageChosen(0);
     } else {
       setImageChosen(imageChosen + 1);
     }
-  };
-  let rightClick = () => {
+  }, [imageChosen, imageList]);
+
+  let rightClick = useCallback(() => {
     if (imageList[imageChosen - 1] === undefined) {
-      setImageChosen(imageList.length - 1);
+      setImageChosen(0);
     } else {
       setImageChosen(imageChosen - 1);
     }
-  };
+  }, [imageChosen, imageList]);
 
-  console.log(stopInterval);
-  if (stopInterval === false) {
-    setInterval(leftClick, 1000);
-    setStopInterval(true);
-  }
+  useEffect(() => {
+    let cancel = setInterval(leftClick, 3000);
+    return () => {
+      clearInterval(cancel);
+    };
+  }, [leftClick]);
 
   return (
     <div>
@@ -95,7 +104,7 @@ function Home() {
           <img
             width="600px"
             height="400px"
-            className="Freedom"
+            className="ImageOnSlider"
             src={
               process.env.PUBLIC_URL +
               "/Images/" +
@@ -124,6 +133,11 @@ function Home() {
                 alt=""
               ></img>
             </button>
+          </div>
+          <div className="myRow">
+            {imageList.map(() => (
+              <div className="imageCircle"></div>
+            ))}
           </div>
         </div>
       </div>

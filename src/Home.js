@@ -6,6 +6,7 @@ function Home() {
   let [passwordStatus, setPasswordStatus] = React.useState("eye-open");
   let [passwordValue, setPasswordValue] = React.useState("");
   let [imageChosen, setImageChosen] = React.useState(0);
+  let [stopInterval, setStopInterval] = React.useState(false);
 
   let imageList = [
     ["freedom", "Free yourself from any costs with SlightBank"],
@@ -45,6 +46,12 @@ function Home() {
       setImageChosen(imageChosen - 1);
     }
   };
+
+  console.log(stopInterval);
+  if (stopInterval === false) {
+    setInterval(leftClick, 1000);
+    setStopInterval(true);
+  }
 
   return (
     <div>

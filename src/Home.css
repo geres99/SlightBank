@@ -37,12 +37,12 @@
 }
 .right {
   display: flex;
-  margin-top: -265px;
+  margin-top: -240px;
   margin-left: 610px;
 }
 .left {
   display: flex;
-  margin-top: -265px;
+  margin-top: -240px;
   margin-left: 20px;
 }
 .Eye {
@@ -169,7 +169,7 @@
   .right {
     display: flex;
     margin-top: calc((-95vw * 2 / 3) / 2 - 16px);
-    margin-left: calc(95vw - 100px);
+    margin-left: calc(95vw - 68px);
   }
   .left {
     display: flex;

@@ -67,13 +67,31 @@ function Home() {
             width="600px"
             height="400px"
             className="Freedom"
-            src={process.env.PUBLIC_URL + "/Images/freedom.jpg"}
+            src={process.env.PUBLIC_URL + "/Images/explore.jpg"}
             alt=""
           ></img>
           <div className="GrayScreen">
             <div className="ImageText">
               Free yourself from any costs with SlightBank
             </div>
+            <button className="buttonSlider">
+              <img
+                className="left"
+                width="32px"
+                height="32px"
+                src={process.env.PUBLIC_URL + "/Images/left-arrow.svg"}
+                alt=""
+              ></img>
+            </button>
+            <button className="buttonSlider">
+              <img
+                className="right"
+                width="32px"
+                height="32px"
+                src={process.env.PUBLIC_URL + "/Images/right-arrow.svg"}
+                alt=""
+              ></img>
+            </button>
           </div>
         </div>
       </div>

@@ -26,6 +26,25 @@
 
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+.buttonSlider {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(255, 255, 255, 0.35);
+}
+.right {
+  display: flex;
+  margin-top: -265px;
+  margin-left: 580px;
+}
+.left {
+  display: flex;
+  margin-top: -265px;
+  margin-left: 20px;
+}
 .Eye {
   display: flex;
   height: 5%;
@@ -147,6 +166,16 @@
 }
 
 @media screen and (max-width: 780px) {
+  .right {
+    display: flex;
+    margin-top: calc((-95vw * 2 / 3) / 2 - 16px);
+    margin-left: calc(95vw - 100px);
+  }
+  .left {
+    display: flex;
+    margin-top: calc((-95vw * 2 / 3) / 2 - 16px);
+    margin-left: 0px;
+  }
   .space {
     display: none;
   }

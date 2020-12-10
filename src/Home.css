@@ -19,6 +19,16 @@
   border: 1px solid rgba(86, 65, 25, 0.2);
   box-sizing: border-box;
 }
+.imageCircleDark {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-left: 5px;
+
+  background: #9c8467;
+  border: 1px solid rgba(86, 65, 25, 0.2);
+  box-sizing: border-box;
+}
 .LoginText {
   display: flex;
   font-family: Lato;
@@ -256,6 +266,17 @@
     margin-left: 2px;
 
     background: #cbb294;
+    border: 1px solid rgba(86, 65, 25, 0.2);
+    box-sizing: border-box;
+  }
+  .imageCircleDark {
+    margin-top: -5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: 2px;
+
+    background: #9c8467;
     border: 1px solid rgba(86, 65, 25, 0.2);
     box-sizing: border-box;
   }

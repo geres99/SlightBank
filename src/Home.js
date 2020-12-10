@@ -1,11 +1,17 @@
 import React, { useEffect, useCallback } from "react";
+import { createGlobalState } from "react-hooks-global-state";
 import "./Home.css";
 import Core from "./Core/Core";
+
+const initialState = { test: 10 };
+const { useGlobalState } = createGlobalState(initialState);
 
 function Home() {
   let [passwordStatus, setPasswordStatus] = React.useState("eye-closed");
   let [passwordValue, setPasswordValue] = React.useState("");
   let [imageChosen, setImageChosen] = React.useState(0);
+
+  const [count, setCount] = useGlobalState("test");
 
   let imageList = [
     ["freedom", "Free yourself from any costs with SlightBank", 0],
@@ -39,7 +45,25 @@ function Home() {
     setPasswordValue(e.target.value);
   };
 
+  let circleChanger = (x) => {
+    if (x[2] === imageChosen) {
+      return <div className="imageCircleDark"></div>;
+    } else {
+      return <div className="imageCircle"></div>;
+    }
+  };
+
   let leftClick = useCallback(() => {
+    if (imageList[imageChosen - 1] === undefined) {
+      setImageChosen(imageList.length - 1);
+    } else {
+      setImageChosen(imageChosen - 1);
+    }
+    setCount(count + 1);
+    console.log(count);
+  }, [imageChosen, imageList]);
+
+  let rightClick = useCallback(() => {
     if (imageList[imageChosen + 1] === undefined) {
       setImageChosen(0);
     } else {
@@ -47,20 +71,12 @@ function Home() {
     }
   }, [imageChosen, imageList]);
 
-  let rightClick = useCallback(() => {
-    if (imageList[imageChosen - 1] === undefined) {
-      setImageChosen(0);
-    } else {
-      setImageChosen(imageChosen - 1);
-    }
-  }, [imageChosen, imageList]);
-
   useEffect(() => {
-    let cancel = setInterval(leftClick, 3000);
+    let cancel = setInterval(rightClick, 3000);
     return () => {
       clearInterval(cancel);
     };
-  }, [leftClick]);
+  }, [rightClick]);
 
   return (
     <div>
@@ -134,11 +150,7 @@ function Home() {
               ></img>
             </button>
           </div>
-          <div className="myRow">
-            {imageList.map(() => (
-              <div className="imageCircle"></div>
-            ))}
-          </div>
+          <div className="myRow">{imageList.map((x) => circleChanger(x))}</div>
         </div>
       </div>
     </div>

@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/SlightBank/static/css/main.d5d5a302.chunk.css",
-    "main.js": "/SlightBank/static/js/main.d31a2406.chunk.js",
-    "main.js.map": "/SlightBank/static/js/main.d31a2406.chunk.js.map",
+    "main.css": "/SlightBank/static/css/main.f896d0b8.chunk.css",
+    "main.js": "/SlightBank/static/js/main.fe3a2b9e.chunk.js",
+    "main.js.map": "/SlightBank/static/js/main.fe3a2b9e.chunk.js.map",
     "runtime-main.js": "/SlightBank/static/js/runtime-main.7fa8eb10.js",
     "runtime-main.js.map": "/SlightBank/static/js/runtime-main.7fa8eb10.js.map",
     "static/js/2.50416eb9.chunk.js": "/SlightBank/static/js/2.50416eb9.chunk.js",
     "static/js/2.50416eb9.chunk.js.map": "/SlightBank/static/js/2.50416eb9.chunk.js.map",
     "index.html": "/SlightBank/index.html",
-    "precache-manifest.21ba76e5dc9722c80c4283167c1dc5b5.js": "/SlightBank/precache-manifest.21ba76e5dc9722c80c4283167c1dc5b5.js",
+    "precache-manifest.80248baf7fa315c70360ccce1310dc63.js": "/SlightBank/precache-manifest.80248baf7fa315c70360ccce1310dc63.js",
     "service-worker.js": "/SlightBank/service-worker.js",
-    "static/css/main.d5d5a302.chunk.css.map": "/SlightBank/static/css/main.d5d5a302.chunk.css.map",
+    "static/css/main.f896d0b8.chunk.css.map": "/SlightBank/static/css/main.f896d0b8.chunk.css.map",
     "static/js/2.50416eb9.chunk.js.LICENSE.txt": "/SlightBank/static/js/2.50416eb9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7fa8eb10.js",
     "static/js/2.50416eb9.chunk.js",
-    "static/css/main.d5d5a302.chunk.css",
-    "static/js/main.d31a2406.chunk.js"
+    "static/css/main.f896d0b8.chunk.css",
+    "static/js/main.fe3a2b9e.chunk.js"
   ]
 }

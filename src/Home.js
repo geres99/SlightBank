@@ -1,10 +1,7 @@
 import React, { useEffect, useCallback } from "react";
-import { createGlobalState } from "react-hooks-global-state";
 import "./Home.css";
 import Core from "./Core/Core";
-
-const initialState = { array: [["marcin", "marcin99"]] };
-const { useGlobalState } = createGlobalState(initialState);
+import { useGlobalAccount } from "./useGlobalAccount";
 
 function Home() {
   let [passwordStatus, setPasswordStatus] = React.useState("eye-closed");
@@ -12,13 +9,13 @@ function Home() {
   let [passwordValue, setPasswordValue] = React.useState("");
   let [imageChosen, setImageChosen] = React.useState(0);
 
-  const [count, setCount] = useGlobalState("array");
+  let [account, setAccount] = useGlobalAccount("array");
 
   let imageList = [
     ["freedom", "Free yourself from any costs with SlightBank", 0],
     [
       "explore",
-      "Explore unexplored before system of payments with SlightBank",
+      "Explore unexplored wtih the system of payments of SlightBank",
       1,
     ],
     [
@@ -76,12 +73,12 @@ function Home() {
   let singup = () => {
     if (userValue.length >= 3 && userValue.length <= 12) {
       if (passwordValue.length >= 3 && passwordValue.length <= 12) {
-        for (let i = 0; i < count.length; i++) {
-          if (count[i][0].toLowerCase() === userValue.toLowerCase()) {
+        for (let i = 0; i < account.length; i++) {
+          if (account[i][0].toLowerCase() === userValue.toLowerCase()) {
             return;
           }
         }
-        setCount([...count, [userValue, passwordValue]]);
+        setAccount([...account, [userValue, passwordValue]]);
         setUserValue("");
         setPasswordValue("");
       }
@@ -89,21 +86,21 @@ function Home() {
   };
 
   let login = () => {
-    console.log(count);
-    for (let i = 0; i < count.length; i++) {
+    console.log(account);
+    for (let i = 0; i < account.length; i++) {
       if (
-        count[i][0].toLowerCase() === userValue.toLowerCase() &&
-        count[i][1] === passwordValue
+        account[i][0].toLowerCase() === userValue.toLowerCase() &&
+        account[i][1] === passwordValue
       ) {
         setUserValue("");
         setPasswordValue("");
-        alert("Zalogowany na konto " + count[i][0]);
+        alert("Zalogowany na konto " + account[i][0]);
       }
     }
   };
 
   useEffect(() => {
-    let cancel = setInterval(rightClick, 3000);
+    let cancel = setInterval(rightClick, 5000);
     return () => {
       clearInterval(cancel);
     };

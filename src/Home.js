@@ -3,15 +3,16 @@ import { createGlobalState } from "react-hooks-global-state";
 import "./Home.css";
 import Core from "./Core/Core";
 
-const initialState = { test: 10 };
+const initialState = { array: [["marcin", "marcin99"]] };
 const { useGlobalState } = createGlobalState(initialState);
 
 function Home() {
   let [passwordStatus, setPasswordStatus] = React.useState("eye-closed");
+  let [userValue, setUserValue] = React.useState("");
   let [passwordValue, setPasswordValue] = React.useState("");
   let [imageChosen, setImageChosen] = React.useState(0);
 
-  const [count, setCount] = useGlobalState("test");
+  const [count, setCount] = useGlobalState("array");
 
   let imageList = [
     ["freedom", "Free yourself from any costs with SlightBank", 0],
@@ -41,8 +42,11 @@ function Home() {
       return "text";
     }
   };
-  let onInputChange = (e) => {
+  let onInputChangePassword = (e) => {
     setPasswordValue(e.target.value);
+  };
+  let onInputChangeUser = (e) => {
+    setUserValue(e.target.value);
   };
 
   let circleChanger = (x) => {
@@ -59,8 +63,6 @@ function Home() {
     } else {
       setImageChosen(imageChosen - 1);
     }
-    setCount(count + 1);
-    console.log(count);
   }, [imageChosen, imageList]);
 
   let rightClick = useCallback(() => {
@@ -70,6 +72,35 @@ function Home() {
       setImageChosen(imageChosen + 1);
     }
   }, [imageChosen, imageList]);
+
+  let singup = () => {
+    if (userValue.length >= 3 && userValue.length <= 12) {
+      if (passwordValue.length >= 3 && passwordValue.length <= 12) {
+        for (let i = 0; i < count.length; i++) {
+          if (count[i][0].toLowerCase() === userValue.toLowerCase()) {
+            return;
+          }
+        }
+        setCount([...count, [userValue, passwordValue]]);
+        setUserValue("");
+        setPasswordValue("");
+      }
+    }
+  };
+
+  let login = () => {
+    console.log(count);
+    for (let i = 0; i < count.length; i++) {
+      if (
+        count[i][0].toLowerCase() === userValue.toLowerCase() &&
+        count[i][1] === passwordValue
+      ) {
+        setUserValue("");
+        setPasswordValue("");
+        alert("Zalogowany na konto " + count[i][0]);
+      }
+    }
+  };
 
   useEffect(() => {
     let cancel = setInterval(rightClick, 3000);
@@ -95,12 +126,16 @@ function Home() {
           ></img>
           <div className="Title">Slight Bank</div>
           <div className="LoginText">Username</div>
-          <input className="input" />
+          <input
+            value={userValue}
+            onChange={onInputChangeUser}
+            className="input"
+          />
           <div className="LoginText">Password</div>
           <input
             type={typeChange()}
             value={passwordValue}
-            onChange={onInputChange}
+            onChange={onInputChangePassword}
             className="input"
           />
           <img
@@ -110,9 +145,13 @@ function Home() {
             alt=""
           ></img>
           <div className="row">
-            <button className="ButtonLog">Log-in</button>
+            <button onClick={login} className="ButtonLog">
+              Log-in
+            </button>
             <div className="SpaceButtons"></div>
-            <button className="ButtonLog">Sign-up</button>
+            <button onClick={singup} className="ButtonLog">
+              Sign-up
+            </button>
           </div>
         </div>
         <div className="space"></div>

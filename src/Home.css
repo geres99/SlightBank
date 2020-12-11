@@ -93,7 +93,7 @@
   letter-spacing: 0.05em;
 
   justify-content: center;
-  margin-top: calc(10% - 400px - 35px);
+  margin-top: calc(10% - 435px);
 
   color: #563619;
 
@@ -279,9 +279,10 @@
     border: 1px solid rgba(86, 65, 25, 0.2);
     box-sizing: border-box;
   }
-}
-@media screen and (max-width: 500px) {
+  .LoginQuill {
+    display: none;
+  }
   .Title {
-    margin-top: calc(10% - 80vw - 35px);
+    margin-top: 10%;
   }
 }

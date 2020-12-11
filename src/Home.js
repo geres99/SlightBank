@@ -8,6 +8,7 @@ function Home() {
   let [userValue, setUserValue] = React.useState("");
   let [passwordValue, setPasswordValue] = React.useState("");
   let [imageChosen, setImageChosen] = React.useState(0);
+  let [createdAccPopUp, setCreatedAccPopUp] = React.useState([]);
 
   let [account, setAccount] = useGlobalAccount("array");
 
@@ -75,18 +76,32 @@ function Home() {
       if (passwordValue.length >= 3 && passwordValue.length <= 12) {
         for (let i = 0; i < account.length; i++) {
           if (account[i][0].toLowerCase() === userValue.toLowerCase()) {
+            setCreatedAccPopUp([
+              ["yellow", "Account with this name already exist!"],
+            ]);
+            setTimeout(closePopUp, 5000);
             return;
           }
         }
         setAccount([...account, [userValue, passwordValue]]);
         setUserValue("");
         setPasswordValue("");
+        setCreatedAccPopUp([["green", "You successfully created an account!"]]);
+        setTimeout(closePopUp, 5000);
+        return;
       }
     }
+    setCreatedAccPopUp([
+      ["red", "Account and password need to be 3-12 letters long!"],
+    ]);
+    setTimeout(closePopUp, 5000);
+  };
+
+  let closePopUp = () => {
+    setCreatedAccPopUp([]);
   };
 
   let login = () => {
-    console.log(account);
     for (let i = 0; i < account.length; i++) {
       if (
         account[i][0].toLowerCase() === userValue.toLowerCase() &&
@@ -94,9 +109,15 @@ function Home() {
       ) {
         setUserValue("");
         setPasswordValue("");
-        alert("Zalogowany na konto " + account[i][0]);
+        setCreatedAccPopUp([
+          ["green", "You successfully logged into account!"],
+        ]);
+        setTimeout(closePopUp, 5000);
+        return;
       }
     }
+    setCreatedAccPopUp([["red", "Incorrect username or password!"]]);
+    setTimeout(closePopUp, 5000);
   };
 
   useEffect(() => {
@@ -114,6 +135,15 @@ function Home() {
         rel="stylesheet"
       />
       <Core />
+      {createdAccPopUp.map((x) => (
+        <div className={"CreatedAccount " + x[0]}>
+          <div></div>
+          <div>{x[1]}</div>
+          <button onClick={closePopUp} className={"closeButton " + x[0]}>
+            X
+          </button>
+        </div>
+      ))}
       <div className="centre">
         <div className="LoginWindow">
           <img

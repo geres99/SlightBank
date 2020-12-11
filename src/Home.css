@@ -78,18 +78,6 @@
   -ms-user-select: none;
   user-select: none;
 }
-.LoginQuill {
-  display: flex;
-  order: -1;
-  margin-top: 40px;
-  width: 400px;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
 .Title {
   display: flex;
   font-family: "Lato";
@@ -236,6 +224,7 @@
   }
   .LoginWindow {
     display: flex;
+    background-image: url("/quilllogin.svg");
     max-height: 500px;
     min-height: 400px;
     height: 70vh;
@@ -246,20 +235,6 @@
     border: 2px solid #b0b0b0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
-  }
-  .LoginQuill {
-    margin-top: 2vh;
-    max-width: 400px;
-    width: 80vw;
-    max-height: 500px;
-    min-height: 70vh;
-    height: 70vh;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
   }
   .centre {
     display: flex;

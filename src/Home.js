@@ -116,6 +116,11 @@ function Home() {
       <Core />
       <div className="centre">
         <div className="LoginWindow">
+          <img
+            className="LoginQuill"
+            src={process.env.PUBLIC_URL + "/Images/quilllogin.svg"}
+            alt=""
+          ></img>
           <div className="Title">Slight Bank</div>
           <div className="LoginText">Username</div>
           <input

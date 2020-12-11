@@ -9,6 +9,9 @@
   border-radius: 15px;
   flex-direction: column;
 }
+.LoginQuill {
+  margin-top: 35px;
+}
 .imageCircle {
   width: 18px;
   height: 18px;
@@ -90,7 +93,7 @@
   letter-spacing: 0.05em;
 
   justify-content: center;
-  margin-top: 10%;
+  margin-top: calc(10% - 400px - 35px);
 
   color: #563619;
 
@@ -224,7 +227,6 @@
   }
   .LoginWindow {
     display: flex;
-    background-image: url("/quilllogin.svg");
     max-height: 500px;
     min-height: 400px;
     height: 70vh;
@@ -276,5 +278,10 @@
     background: #9c8467;
     border: 1px solid rgba(86, 65, 25, 0.2);
     box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 500px) {
+  .Title {
+    margin-top: calc(10% - 80vw - 35px);
   }
 }

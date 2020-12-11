@@ -5,6 +5,7 @@ import About from "./About";
 import Accounts from "./Accounts";
 import Resources from "./Resources";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import MyAccount from "./MyAccount";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         </Route>
         <Route path="/Accounts">
           <Accounts />
+        </Route>
+        <Route path="/MyAccount">
+          <MyAccount />
         </Route>
         <Route path="/">
           <Home />

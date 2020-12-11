@@ -1,7 +1,9 @@
 import React, { useEffect, useCallback } from "react";
 import "./Home.css";
 import Core from "./Core/Core";
+import { useHistory } from "react-router-dom";
 import { useGlobalAccount } from "./useGlobalAccount";
+import { useGlobalAccountLogged } from "./useGlobalAccountLogged";
 
 function Home() {
   let [passwordStatus, setPasswordStatus] = React.useState("eye-closed");
@@ -11,6 +13,13 @@ function Home() {
   let [createdAccPopUp, setCreatedAccPopUp] = React.useState([]);
 
   let [account, setAccount] = useGlobalAccount("array");
+  let [accountLogged, setAccountLogged] = useGlobalAccountLogged("account");
+
+  let history = useHistory();
+
+  let LoginPush = () => {
+    history.push("/MyAccount");
+  };
 
   let imageList = [
     ["freedom", "Free yourself from any costs with SlightBank", 0],
@@ -80,6 +89,8 @@ function Home() {
               ["yellow", "Account with this name already exist!"],
             ]);
             setTimeout(closePopUp, 5000);
+            setUserValue("");
+            setPasswordValue("");
             return;
           }
         }
@@ -109,15 +120,15 @@ function Home() {
       ) {
         setUserValue("");
         setPasswordValue("");
-        setCreatedAccPopUp([
-          ["green", "You successfully logged into account!"],
-        ]);
-        setTimeout(closePopUp, 5000);
+        setAccountLogged(account[i][0]);
+        LoginPush();
         return;
       }
     }
     setCreatedAccPopUp([["red", "Incorrect username or password!"]]);
     setTimeout(closePopUp, 5000);
+    setUserValue("");
+    setPasswordValue("");
   };
 
   useEffect(() => {

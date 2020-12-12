@@ -16,11 +16,11 @@ function Logo(props) {
         rel="stylesheet"
       />
       <img
-        className="quill"
+        className={"quill" + props.place}
         src={process.env.PUBLIC_URL + "/Images/quill.svg"}
         alt=""
       ></img>
-      <div onClick={HomePush} className="LogoText">
+      <div onClick={HomePush} className={"LogoText" + props.place}>
         Slight Bank
       </div>
     </div>

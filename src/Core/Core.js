@@ -35,7 +35,7 @@ let Core = () => {
         rel="stylesheet"
       />
       <div className="upBar">
-        <Logo link={"/"} />
+        <Logo link={"/"} place={"Core"} />
         <div className="Desktop">
           <div className="flexButtons">
             <button onClick={AboutPush} className="upButtons About">

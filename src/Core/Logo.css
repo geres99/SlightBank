@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
 }
-.quill {
+.quillCore {
   display: flex;
   height: 100px;
   margin-left: 37px;
@@ -17,7 +17,7 @@
   -ms-user-select: none;
   user-select: none;
 }
-.LogoText {
+.LogoTextCore {
   position: absolute;
   left: 25px;
   top: 13px;
@@ -33,6 +33,43 @@
   color: #563619;
 
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.LogoTextAccount {
+  position: relative;
+  margin-left: -110px;
+  margin-top: -10px;
+  padding-right: -200px;
+
+  font-family: "Lobster Two";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 40px;
+
+  color: #563619;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.quillAccount {
+  display: flex;
+  height: 100px;
+  margin-left: 20px;
+  margin-top: 5px;
+  transform: rotate(31.62deg);
 
   -webkit-touch-callout: none;
   -webkit-user-select: none;

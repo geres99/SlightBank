@@ -10,7 +10,7 @@ function MyAccount() {
     <div>
       <div className="upBarLogin">
         <div>Yieks</div>
-        <Logo link={"/MyAccount"} />
+        <Logo link={"/MyAccount"} place={"Account"} />
         <div>Yieks</div>
       </div>
       {accountLogged}

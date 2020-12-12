@@ -102,6 +102,8 @@ function Home() {
         return;
       }
     }
+    setUserValue("");
+    setPasswordValue("");
     setCreatedAccPopUp([
       ["red", "Account and password need to be 3-12 letters long!"],
     ]);

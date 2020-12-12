@@ -1,8 +1,13 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./Logo.css";
 
-function Logo() {
+function Logo(props) {
+  let history = useHistory();
+
+  let HomePush = () => {
+    history.push(props.link);
+  };
   return (
     <div className="align-items">
       <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -15,9 +20,9 @@ function Logo() {
         src={process.env.PUBLIC_URL + "/Images/quill.svg"}
         alt=""
       ></img>
-      <Link to="/">
-        <div className="LogoText">Slight Bank</div>
-      </Link>
+      <div onClick={HomePush} className="LogoText">
+        Slight Bank
+      </div>
     </div>
   );
 }

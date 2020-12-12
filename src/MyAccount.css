@@ -1,0 +1,16 @@
+.upBarLogin {
+  display: flex;
+  background: #9c8467;
+  height: 70px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  justify-content: space-evenly;
+}
+.LogoText {
+  position: relative;
+  margin-left: -135px;
+  margin-top: -20px;
+}
+.quill {
+  display: flex;
+  margin-left: -20px;
+}

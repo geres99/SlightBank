@@ -11,6 +11,7 @@
 }
 .LoginQuill {
   margin-top: 35px;
+  max-height: 400px;
 }
 .CreatedAccount {
   height: 30px;

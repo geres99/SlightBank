@@ -1,5 +1,6 @@
 import React from "react";
-import Core from "./Core/Core";
+import Logo from "./Core/Logo";
+import "./MyAccount.css";
 import { useGlobalAccountLogged } from "./useGlobalAccountLogged";
 
 function MyAccount() {
@@ -7,7 +8,11 @@ function MyAccount() {
 
   return (
     <div>
-      <Core />
+      <div className="upBarLogin">
+        <div>Yieks</div>
+        <Logo link={"/MyAccount"} />
+        <div>Yieks</div>
+      </div>
       {accountLogged}
     </div>
   );

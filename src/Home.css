@@ -292,7 +292,7 @@
     min-height: 5%;
     height: 5%;
     width: 30px;
-    margin-top: -37px;
+    margin-top: -35px;
     margin-left: 83%;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -327,7 +327,7 @@
     display: none;
   }
   .Title {
-    margin-top: 10%;
+    margin-top: 5%;
   }
   .CreatedAccount {
     font-size: 12px;

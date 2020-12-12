@@ -14,6 +14,7 @@ function MyAccount() {
         <div>Yieks</div>
       </div>
       {accountLogged}
+      <div className="longBar"></div>
     </div>
   );
 }

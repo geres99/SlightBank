@@ -47,6 +47,7 @@ let Core = () => {
             <button onClick={ResourcesPush} className="upButtons Resources">
               Resources
             </button>
+            <div className="spaceFiller"></div>
           </div>
         </div>
         <div className="Mobile">

@@ -12,3 +12,30 @@
   width: 500px;
   background-color: yellow;
 }
+.ProfileImg {
+  height: 50px;
+  padding-left: 5px;
+}
+.LogOutImg {
+  height: 45px;
+  padding-left: 5px;
+}
+.MenuButton {
+  border: none;
+  background: #9c8467;
+}
+.MobileOnly {
+  display: none;
+}
+.LogOut {
+  border: none;
+  background: #9c8467;
+}
+@media screen and (max-width: 780px) {
+  .MobileOnly {
+    display: inline;
+  }
+  .DesktopOnly {
+    display: none;
+  }
+}

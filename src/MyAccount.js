@@ -9,11 +9,25 @@ function MyAccount() {
   return (
     <div>
       <div className="upBarLogin">
-        <div>Yieks</div>
+        <button className="MenuButton MobileOnly">
+          <img
+            className="ProfileImg"
+            src={process.env.PUBLIC_URL + "/Images/user.svg"}
+            alt=""
+          ></img>
+        </button>
+        <button className="LogOut DesktopOnly">
+          Logged as: {accountLogged}
+        </button>
         <Logo link={"/MyAccount"} place={"Account"} />
-        <div>Yieks</div>
+        <button className="MenuButton MobileOnly">
+          <img
+            className="LogOutImg"
+            src={process.env.PUBLIC_URL + "/Images/logout.svg"}
+            alt=""
+          ></img>
+        </button>
       </div>
-      {accountLogged}
       <div className="longBar"></div>
     </div>
   );

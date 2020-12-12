@@ -256,9 +256,9 @@
   }
   .ImageText {
     margin-top: 0px;
+    padding-left: 8px;
     mix-blend-mode: normal;
     width: calc(95vw);
-    padding-left: 20px;
     font-style: normal;
     font-weight: normal;
     font-size: calc(95vw * (45 / 1000));

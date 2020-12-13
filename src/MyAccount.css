@@ -8,9 +8,129 @@
   justify-content: space-evenly;
 }
 .longBar {
-  height: 5000px;
-  width: 500px;
-  background-color: yellow;
+  z-index: -100;
+  width: 95vw;
+  max-width: 800px;
+
+  position: absolute;
+  top: 100px;
+
+  background: #9c8467;
+  border: 1px solid #b0b0b0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+.textDivAcc {
+  display: flex;
+  flex-direction: column;
+}
+.textDivAcc > * {
+  margin-top: 25px;
+}
+.balanceDiv {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 5%;
+  width: 90%;
+  height: 150px;
+  background: #cbb294;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  justify-content: space-between;
+}
+.balanceStatus {
+  display: flex;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 34px;
+
+  letter-spacing: 0.1em;
+
+  color: #563619;
+  justify-content: center;
+}
+.moneyStatus {
+  display: flex;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 0.1em;
+
+  color: #000000;
+  text-shadow: 2px 0 #373737;
+  justify-content: center;
+}
+.rowTransaction {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.rowTransaction > * {
+  margin-top: 30px;
+}
+.columnTransaction {
+  display: flex;
+  flex-direction: column;
+}
+.columnTransaction > * {
+  margin-top: 5px;
+}
+.transactionBox {
+  display: flex;
+  width: 90vw;
+  max-width: 350px;
+  background: #cbbdac;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  flex-direction: column;
+}
+.transactionBox > * {
+  margin-top: 10px;
+}
+.centreText {
+  display: flex;
+  justify-content: center;
+}
+.endFiller {
+  height: 30px;
+}
+.centreTransaction {
+  display: flex;
+  justify-content: center;
+
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 0.1em;
+
+  color: #000000;
+}
+.positiveBalance {
+  color: green;
+}
+.negativeBalance {
+  color: red;
+}
+.deleteButton {
+  border: none;
+  background-color: #cbbdac;
+  color: red;
+}
+.line {
+  height: 1px;
+  width: 80vw;
+  max-width: 315px;
+  background-color: #563619;
+}
+.myCentre {
+  display: flex;
+  justify-content: center;
 }
 .ProfileImg {
   height: 50px;
@@ -27,9 +147,22 @@
 .MobileOnly {
   display: none;
 }
-.LogOut {
+.AccountButton {
+  height: 70px;
+  width: 180px;
+
   border: none;
-  background: #9c8467;
+  background: #cbbdac;
+
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+
+  letter-spacing: 0.1em;
+
+  color: #563619;
 }
 @media screen and (max-width: 780px) {
   .MobileOnly {

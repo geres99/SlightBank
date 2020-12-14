@@ -4,15 +4,16 @@ import Core from "./Core/Core";
 import { useHistory } from "react-router-dom";
 import { useGlobalAccount } from "./useGlobalAccount";
 import { useGlobalAccountLogged } from "./useGlobalAccountLogged";
+import { useGlobalPopUp } from "./useGlobalPopUp";
 
 function Home() {
   let [passwordStatus, setPasswordStatus] = React.useState("eye-closed");
   let [userValue, setUserValue] = React.useState("");
   let [passwordValue, setPasswordValue] = React.useState("");
   let [imageChosen, setImageChosen] = React.useState(0);
-  let [createdAccPopUp, setCreatedAccPopUp] = React.useState([]);
 
   let [account, setAccount] = useGlobalAccount("array");
+  let [createdAccPopUp, setCreatedAccPopUp] = useGlobalPopUp("popUp");
   let [accountLogged, setAccountLogged] = useGlobalAccountLogged("account");
 
   let history = useHistory();

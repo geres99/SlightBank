@@ -2,7 +2,9 @@ import React from "react";
 import Logo from "./Core/Logo";
 import "./MyAccount.css";
 import { useGlobalAccountLogged } from "./useGlobalAccountLogged";
+import { useGlobalPopUp } from "./useGlobalPopUp";
 import { useHistory } from "react-router-dom";
+import Moment from "react-moment";
 
 function MyAccount() {
   let names = [
@@ -42,11 +44,23 @@ function MyAccount() {
   let [transactionNumber, setTransactionNumber] = React.useState(0);
   let [popProfile, setPopProfile] = React.useState([]);
 
+  let [createdAccPopUp, setCreatedAccPopUp] = useGlobalPopUp("popUp");
+
+  let dateNow = new Date(Date.now());
+
   let history = useHistory();
+
+  let closePopUp = () => {
+    setCreatedAccPopUp([]);
+  };
 
   let logout = () => {
     setAccountLogged([]);
     history.push("/");
+    setTimeout(closePopUp, 5000);
+    setCreatedAccPopUp([
+      ["green", "You successfully logged out from your account!"],
+    ]);
   };
 
   let checkProfile = () => {
@@ -99,8 +113,22 @@ function MyAccount() {
     setBalance(balance - randomNum);
   };
 
+  console.log(accountLogged);
+  let areYouLoggedIn = () => {
+    if (accountLogged.length === 0) {
+      history.push("/");
+      setTimeout(closePopUp, 5000);
+      setCreatedAccPopUp([
+        [
+          "red",
+          "Youre not logged in to any accounts! (GlobalState's reset after refreshing page)",
+        ],
+      ]);
+    }
+  };
+
   return (
-    <div>
+    <div className={areYouLoggedIn()}>
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
         href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"
@@ -169,7 +197,9 @@ function MyAccount() {
                         X
                       </button>
                     </div>
-                    <div className="centreTransaction">27.12.20</div>
+                    <div className="centreTransaction">
+                      <Moment format="YYYY/MM/DD">{dateNow}</Moment>
+                    </div>
                     <div className="line"></div>
                   </div>
                 </div>
@@ -195,7 +225,9 @@ function MyAccount() {
                         X
                       </button>
                     </div>
-                    <div className="centreTransaction">27.12.20</div>
+                    <div className="centreTransaction">
+                      <Moment format="YYYY/MM/DD">{dateNow}</Moment>
+                    </div>
                     <div className="line"></div>
                   </div>
                 </div>

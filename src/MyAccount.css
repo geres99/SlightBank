@@ -51,6 +51,10 @@
   color: #563619;
   justify-content: center;
 }
+.pushDown {
+  margin-top: 70px;
+  background-color: green;
+}
 .moneyStatus {
   display: flex;
   font-family: Lato;
@@ -112,9 +116,11 @@
   color: #000000;
 }
 .positiveBalance {
+  padding-left: 7px;
   color: green;
 }
 .negativeBalance {
+  padding-left: 7px;
   color: red;
 }
 .deleteButton {
@@ -164,11 +170,44 @@
 
   color: #563619;
 }
+.addButton {
+  height: 50px;
+  border: none;
+  background: #cbbdac;
+
+  font-size: 35px;
+  color: green;
+}
 @media screen and (max-width: 780px) {
   .MobileOnly {
     display: inline;
   }
   .DesktopOnly {
     display: none;
+  }
+  .profileSettings {
+    display: flex;
+    z-index: -90;
+    width: 100vw;
+    height: 70px;
+
+    position: fixed;
+    top: 70px;
+
+    background: #c9b69e;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    justify-content: center;
+  }
+  .littleMargin {
+    margin-top: 10px;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+
+    letter-spacing: 0.1em;
+
+    color: #563619;
   }
 }

@@ -2,7 +2,7 @@ import { createGlobalState } from "react-hooks-global-state";
 
 let initialState = {
   array: [
-    ["marcin", "marcin99"],
+    ["Marcin", "marcin99"],
     ["x", "x"],
   ],
 };

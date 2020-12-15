@@ -28,18 +28,10 @@
   font-size: 32px;
   padding-top: 15px;
 }
-.littleMargins {
+.littlesMargin {
   margin-top: 20px;
 }
 .nadropdown {
   display: flex;
   margin-top: 5px;
-}
-.columnAccounts {
-  display: flex;
-  flex-direction: column;
-}
-.centreAccounts {
-  display: flex;
-  justify-content: center;
 }

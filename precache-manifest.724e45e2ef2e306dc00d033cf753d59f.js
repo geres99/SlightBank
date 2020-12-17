@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "97283553f5cae434d2dcb9664b75f6e9",
+    "revision": "1b803ad53f86a55b501c84ff2bcb1f5c",
     "url": "/SlightBank/index.html"
   },
   {
-    "revision": "121110c805c8239232d8",
-    "url": "/SlightBank/static/css/main.c2030631.chunk.css"
+    "revision": "38496b30050556545fcd",
+    "url": "/SlightBank/static/css/main.5222455d.chunk.css"
   },
   {
     "revision": "4c6d218a70a37631b225",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SlightBank/static/js/2.33bb7fb2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "121110c805c8239232d8",
-    "url": "/SlightBank/static/js/main.4481a746.chunk.js"
+    "revision": "38496b30050556545fcd",
+    "url": "/SlightBank/static/js/main.53bbc530.chunk.js"
   },
   {
     "revision": "ee2178a7453c79de980d",
